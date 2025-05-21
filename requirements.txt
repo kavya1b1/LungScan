@@ -1,0 +1,17 @@
+# Core dependencies
+fastapi
+uvicorn
+gradio
+torch
+torchvision
+pillow
+scikit-image
+opencv-python
+
+# Optional - if working with DICOM
+pydicom
+SimpleITK
+
+# Notebook & visualization
+matplotlib
+jupyter
