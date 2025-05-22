@@ -1,55 +1,82 @@
-🩺 LungScan - AI-Powered Chest X-ray Analysis
-LungScan is an advanced medical imaging API built with FastAPI and AI models to diagnose lung conditions like Pneumonia & Tuberculosis from chest X-rays.
+# 🫁 LungScan: AI-Powered Chest X-Ray Analysis
 
-🔗 Live GitHub Repo: LungScan
+LungScan is a medical imaging tool built using FastAPI that classifies chest X-ray images using a **ResNet-18** model and performs mock segmentation using a placeholder **U-Net** model.
 
-🚀 Features
-✅ AI-powered pathology classification (Normal, Pneumonia, Tuberculosis) ✅ Segmentation masks for lung abnormalities ✅ Built with FastAPI, PyTorch, and React for a seamless experience ✅ Fully customizable API with real-time predictions
+> ⚠️ This project is for educational purposes only. It should not be used for real clinical diagnosis.
 
-📂 Project Structure
+---
+
+## 🧠 Features
+
+- 🧪 Classifies chest X-rays as **Normal** or **Pneumonia**
+- 🧩 Includes dummy segmentation (U-Net based placeholder)
+- 📤 Upload image via API or frontend UI
+- 📊 Visualization of prediction and segmented output
+- 🚀 FastAPI backend with auto-generated Swagger docs
+
+---
+
+## 🗂 Project Structure
+
 LungScan/
-│── sample_data/  # Contains dataset (excluded from GitHub)
-│── backend/      # FastAPI-based AI model & inference logic
-│── frontend/     # React UI for image uploads & results display
-│── utils.py      # Preprocessing, segmentation, and classification functions
-│── app.py        # Main FastAPI application
-│── README.md     # You’re reading this!
-📊 Dataset
-Since the dataset contains thousands of images, it is hosted externally. 🔗 Download Dataset: [YOUR_GOOGLE_DRIVE_LINK]
+├── api/ # FastAPI endpoints
+├── models/ # Model training & loading code
+├── sample_data/ # Dataset (ignored in Git)
+├── static/ # Web assets or visual outputs
+├── templates/ # HTML templates for frontend (if any)
+├── unet_dummy.py # Dummy segmentation logic
+├── train_resnet.py # ResNet-18 training script
+├── app.py # Main FastAPI app
+├── requirements.txt # Dependencies
+└── README.md # This file
 
-To use it in your project, place the downloaded files inside:
+---
 
-LungScan/sample_data/chest_xray/
-💻 Installation & Setup
-🔹 Step 1: Clone Repo & Install Dependencies
-bash
-git clone https://github.com/kavya1b1/LungScan.git
-cd LungScan
+## 🚀 Getting Started
+
+### ✅ Prerequisites
+
+- Python 3.10+
+- pip
+
+### 📦 Install Dependencies
+
+```bash
 pip install -r requirements.txt
-🔹 Step 2: Run FastAPI Backend
+▶️ Run the App
 bash
+Copy
+Edit
 uvicorn app:app --reload
-🔗 Visit Swagger UI: http://127.0.0.1:8000/docs
+Visit: http://localhost:8000/docs to use the interactive Swagger API.
 
-🔹 Step 3: Run Frontend
-npm install
-npm start
+🏋️‍♂️ Model Training
+ResNet Classifier
+bash
+Copy
+Edit
+python train_resnet.py
+This will train and save a ResNet-18 model for classification on your local dataset.
 
-🛠 API Endpoints
-Endpoint	Method	Description
-/upload_image	POST	Upload X-ray & get classification + segmentation mask
-/predict	GET	Run AI pathology analysis
-/docs	GET	Swagger UI for testing API
-🤖 AI Model Details
-Model: ResNet-based classifier
+Dummy U-Net
+A dummy U-Net model is implemented in unet_dummy.py as a placeholder for future segmentation tasks.
 
-Trained on chest X-ray datasets
+💾 Dataset
+Chest X-ray dataset is stored locally in [sample_data/ folder.](https://drive.google.com/file/d/1OmBzt3X_u_Sd3pZuuVvpzWHeb78E4Xgn/view?usp=drive_link)
 
-Uses PyTorch for inference
+Due to size limits, this folder is excluded from the repository using .gitignore.
 
-GPU/Apple MPS acceleration supported
+💡 You can download the dataset from:
+https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia
 
-📌 Contributors
-👤 Kavya – AI Developer 📅 Project Started: May 2025
+🛡 Disclaimer
+This project is not a certified diagnostic tool and should not be used for real-world clinical decision making.
 
-🔥 You're all set! Let me know if you want any tweaks. Just replace the Google Drive link, and you're good to go! 😆🚀 This is an amazing project! 🎉
+🙋‍♀️ Author
+Kavya Gupta
+📧 kavya1b1@gmail.com
+🔗 LinkedIn | GitHub
+
+⭐️ Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
