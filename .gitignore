@@ -11,3 +11,4 @@ __MACOSX/
 # Optional virtual env
 .venv/
 *.env
+sample_data/
