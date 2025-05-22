@@ -1,0 +1,13 @@
+# Ignore datasets and large files
+sample_data/
+*.jpg
+*.png
+
+# Cache & OS files
+__pycache__/
+.DS_Store
+__MACOSX/
+
+# Optional virtual env
+.venv/
+*.env
