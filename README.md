@@ -1,82 +1,52 @@
-# 🫁 LungScan: AI-Powered Chest X-Ray Analysis
+🩺 LungScan - AI-Powered Chest X-ray Analysis
+LungScan is an advanced medical imaging API built with FastAPI and AI models to diagnose lung conditions like Pneumonia & Tuberculosis from chest X-rays.
 
-LungScan is a medical imaging tool built using FastAPI that classifies chest X-ray images using a **ResNet-18** model and performs mock segmentation using a placeholder **U-Net** model.
+🔗 Live GitHub Repo: LungScan
 
-> ⚠️ This project is for educational purposes only. It should not be used for real clinical diagnosis.
+🚀 Features
+✅ AI-powered pathology classification (Normal, Pneumonia, Tuberculosis) ✅ Segmentation masks for lung abnormalities ✅ Built with FastAPI, PyTorch, and React for a seamless experience ✅ Fully customizable API with real-time predictions
 
----
-
-## 🧠 Features
-
-- 🧪 Classifies chest X-rays as **Normal** or **Pneumonia**
-- 🧩 Includes dummy segmentation (U-Net based placeholder)
-- 📤 Upload image via API or frontend UI
-- 📊 Visualization of prediction and segmented output
-- 🚀 FastAPI backend with auto-generated Swagger docs
-
----
-
-## 🗂 Project Structure
-
+📂 Project Structure
 LungScan/
-├── api/ # FastAPI endpoints
-├── models/ # Model training & loading code
-├── sample_data/ # Dataset (ignored in Git)
-├── static/ # Web assets or visual outputs
-├── templates/ # HTML templates for frontend (if any)
-├── unet_dummy.py # Dummy segmentation logic
-├── train_resnet.py # ResNet-18 training script
-├── app.py # Main FastAPI app
-├── requirements.txt # Dependencies
-└── README.md # This file
+│── sample_data/  # Contains dataset (excluded from GitHub)
+│── backend/      # FastAPI-based AI model & inference logic
+│── frontend/     # React UI for image uploads & results display
+│── utils.py      # Preprocessing, segmentation, and classification functions
+│── app.py        # Main FastAPI application
+│── README.md     # You’re reading this!
+📊 Dataset
+Since the dataset contains thousands of images, it is hosted externally. 🔗 Download Dataset: [https://drive.google.com/file/d/1OmBzt3X_u_Sd3pZuuVvpzWHeb78E4Xgn/view?usp=drive_link]
 
----
+To use it in your project, place the downloaded files inside:
 
-## 🚀 Getting Started
-
-### ✅ Prerequisites
-
-- Python 3.10+
-- pip
-
-### 📦 Install Dependencies
-
-```bash
+LungScan/sample_data/chest_xray/
+💻 Installation & Setup
+🔹 Step 1: Clone Repo & Install Dependencies
+bash
+git clone https://github.com/kavya1b1/LungScan.git
+cd LungScan
 pip install -r requirements.txt
-▶️ Run the App
+🔹 Step 2: Run FastAPI Backend
 bash
-Copy
-Edit
 uvicorn app:app --reload
-Visit: http://localhost:8000/docs to use the interactive Swagger API.
+🔗 Visit Swagger UI: http://127.0.0.1:8000/docs
 
-🏋️‍♂️ Model Training
-ResNet Classifier
-bash
-Copy
-Edit
-python train_resnet.py
-This will train and save a ResNet-18 model for classification on your local dataset.
+npm install
+npm start
 
-Dummy U-Net
-A dummy U-Net model is implemented in unet_dummy.py as a placeholder for future segmentation tasks.
+🛠 API Endpoints
+Endpoint	Method	Description
+/upload_image	POST	Upload X-ray & get classification + segmentation mask
+/predict	GET	Run AI pathology analysis
+/docs	GET	Swagger UI for testing API
+🤖 AI Model Details
+Model: ResNet-based classifier
 
-💾 Dataset
-Chest X-ray dataset is stored locally in [sample_data/ folder.](https://drive.google.com/file/d/1OmBzt3X_u_Sd3pZuuVvpzWHeb78E4Xgn/view?usp=drive_link)
+Trained on chest X-ray datasets
 
-Due to size limits, this folder is excluded from the repository using .gitignore.
+Uses PyTorch for inference
 
-💡 You can download the dataset from:
-https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia
+GPU/Apple MPS acceleration supported
 
-🛡 Disclaimer
-This project is not a certified diagnostic tool and should not be used for real-world clinical decision making.
-
-🙋‍♀️ Author
-Kavya Gupta
-📧 kavya1b1@gmail.com
-🔗 LinkedIn | GitHub
-
-⭐️ Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
+📌 Contributors
+👤 Kavya – AI Developer 📅 Project Started: May 2025
